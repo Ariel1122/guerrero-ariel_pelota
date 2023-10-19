@@ -11,12 +11,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   // IMPRESION DE VARIABLES
   // print(posX);c
-  // posX = 234;
-  // print(posX);
-  // posX = posX + 25;
-  // print(posX);
-  // posX = posX * 2
-  // print(posX);;
+
   // posicion de la bolita
   // = asigna el numero al lado debecho
   posX = windowWidth / 2;
@@ -44,10 +39,8 @@ function draw() {
     radio = diametro / 2;
 
     posX = windowWidth + radio;
-    // posicion en x el ancho de la pantalla, si la posicion en x es menor a sero la volita se mueve
   }
   fill(colorCirculo);
   ellipse(posX, posY, diametro, diametro);
-  // circle(posX, posY, diametro);
   print(posX);
 }
