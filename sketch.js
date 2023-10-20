@@ -13,11 +13,10 @@ function setup() {
   // print(posX);c
 
   // posicion de la bolita
-  // = asigna el numero al lado debecho
+  // = asigna un valor
   posX = windowWidth / 2;
   posY = windowHeight / 2;
   diametro = 100;
-  // se automatiza el tamaño
   radio = diametro / 2;
   fondo = color(255, 100, 50);
   colorCirculo = color(22, 100, 50);
@@ -29,10 +28,13 @@ function setup() {
 function draw() {
   background(fondo);
 
-  // velocidad deternimada por el calculo de la varible
-  posX -= 10;
-  // la posicion en x del ciculo (centro) + mas 25 del tamaño general del ciculo
+  posX -= 10; //  posX se disminuye en 10 unidades en cada iteración, lo que hace que la pelota se mueva hacia la izquierda.
+
+  // Si posX es menor que el valor negativo del radio, se considera que la pelota ha salido completamente del lienzo en el lado izquierdo.
   if (posX < -radio) {
+    // Generar una nueva posición aleatoria en el eje Y
+    posY = random(0, windowHeight);
+
     diametro = random(10, 100);
     colorCirculo = color(random(100, 255), random(100, 255), random(100, 255));
     fondo = color(random(100, 255), random(100, 255), random(100, 255));
@@ -40,6 +42,7 @@ function draw() {
 
     posX = windowWidth + radio;
   }
+  strokeWeight(4);
   fill(colorCirculo);
   ellipse(posX, posY, diametro, diametro);
   print(posX);
